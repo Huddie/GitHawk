@@ -3,14 +3,14 @@ First off, welcome to the GitHawk community!
 
 This guide will walk through the setup process required in order to get the GitHawk app running properly.
 
-## 1. Cloning the repo
+## Cloning the repo
 1. Create or navigation to a folder/directory where you’ll store the GitHawk project.
 
 	Example: `mkdir ./desktop/GitHawkApp/`
 
 2. In terminal clone the repo using: `git clone https://github.com/<YourGithubName>/GitHawk.git`
 
-## 2. Installing 
+## Installing 
 
 ```
 cd GitHawk
@@ -19,7 +19,32 @@ bundle exec pod install
 npm install
 ```
 
-## 3. Setting up code-signing (With automatic code-signing)
+## Setting up code-signing (With quickstart)
+⚠️ **Requires python3** ⚠️
+
+Make sure your in the GitHawk directory `/GitHawk`
+
+```
+cd quickstart
+python3 quickstart.py
+```
+
+Once that finishes:
+
+1. Open the Xcode workspace called: `Freetime.xcworkspace` (`open Freetime.xcworkspace`)
+2. Open the projects settings ![](./Design/projectIcon.png)
+3. On the left under Targets switch the team in:
+	* Freetime
+	* FreetimeTests
+	* FreetimeWatch
+	* FreetimeWatch Extension
+	
+	to the team associated to your developer account.
+	
+**Skip Setting up code-signing (with automatic code-signing) and continue the setup process with setting up OAuth for login**
+
+## Setting up code-signing (With automatic code-signing) 
+‼️ **Skip if you used quickstart** ‼️
 
 1. Open the Xcode workspace called: `Freetime.xcworkspace`
 (`open Freetime.xcworkspace`)
@@ -71,7 +96,7 @@ On the left there under Targets should be:
 >   Checkpoint: At this point you should be able to successfully build the app (But not able to sign in)
 
 
-## 4. Setting up OAuth for login
+## Setting up OAuth for login
 
 To be able to log in during development, you'll need a Client ID and Client Secret.
 To get these, [register](https://github.com/settings/applications/new) a new OAuth application on GitHub.
