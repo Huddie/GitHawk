@@ -436,6 +436,7 @@
 		98F9F4031F9CD006005A0266 /* Image+Base64.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98F9F4021F9CD006005A0266 /* Image+Base64.swift */; };
 		BD3761B0209E032500401DFB /* BookmarkNavigationItemTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD3761AF209E032500401DFB /* BookmarkNavigationItemTests.swift */; };
 		BD89007E20B8844B0026013F /* NetworkingURLPathTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD89007D20B8844B0026013F /* NetworkingURLPathTests.swift */; };
+		C0179F642145760F00E120E1 /* GitHawkRefreshControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0179F632145760E00E120E1 /* GitHawkRefreshControl.swift */; };
 		D8BAD0601FDA0A1A00C41071 /* LabelListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8BAD05F1FDA0A1A00C41071 /* LabelListCell.swift */; };
 		D8BAD0641FDF221900C41071 /* LabelListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8BAD0631FDF221900C41071 /* LabelListView.swift */; };
 		D8BAD0661FDF224600C41071 /* WrappingStaticSpacingFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8BAD0651FDF224600C41071 /* WrappingStaticSpacingFlowLayout.swift */; };
@@ -965,6 +966,7 @@
 		B3C439BE890EECD7C0C692C5 /* Pods-Freetime.testflight.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Freetime.testflight.xcconfig"; path = "Pods/Target Support Files/Pods-Freetime/Pods-Freetime.testflight.xcconfig"; sourceTree = "<group>"; };
 		BD3761AF209E032500401DFB /* BookmarkNavigationItemTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkNavigationItemTests.swift; sourceTree = "<group>"; };
 		BD89007D20B8844B0026013F /* NetworkingURLPathTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingURLPathTests.swift; sourceTree = "<group>"; };
+		C0179F632145760E00E120E1 /* GitHawkRefreshControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GitHawkRefreshControl.swift; sourceTree = "<group>"; };
 		D396E0DA66FED629384A84BC /* Pods_FreetimeWatch.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FreetimeWatch.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8BAD05F1FDA0A1A00C41071 /* LabelListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelListCell.swift; sourceTree = "<group>"; };
 		D8BAD0631FDF221900C41071 /* LabelListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LabelListView.swift; sourceTree = "<group>"; };
@@ -1701,6 +1703,7 @@
 		297AE86C1EC0D5C200B44A1F /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				C0179F632145760E00E120E1 /* GitHawkRefreshControl.swift */,
 				29AAB7161FB4A2AE001D5E6A /* BoundedImageSize.swift */,
 				29316DB41ECC7DEB007CAE3F /* ButtonCell.swift */,
 				29622B44210520E6000C428D /* CardCollectionViewCell.swift */,
@@ -2230,7 +2233,7 @@
 				TargetAttributes = {
 					294EE4B8209006BF002C9CB1 = {
 						CreatedOnToolsVersion = 9.3;
-						DevelopmentTeam = 523C4DWBTH;
+						DevelopmentTeam = 8T736HH745;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.ApplicationGroups.iOS = {
@@ -2240,7 +2243,7 @@
 					};
 					294EE4C4209006C2002C9CB1 = {
 						CreatedOnToolsVersion = 9.3;
-						DevelopmentTeam = 523C4DWBTH;
+						DevelopmentTeam = 8T736HH745;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.ApplicationGroups.iOS = {
@@ -2250,7 +2253,7 @@
 					};
 					297AE8331EC0D58A00B44A1F = {
 						CreatedOnToolsVersion = 8.3.2;
-						DevelopmentTeam = 523C4DWBTH;
+						DevelopmentTeam = 8T736HH745;
 						LastSwiftMigration = 0900;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
@@ -2264,7 +2267,7 @@
 					};
 					297AE8471EC0D58A00B44A1F = {
 						CreatedOnToolsVersion = 8.3.2;
-						DevelopmentTeam = 523C4DWBTH;
+						DevelopmentTeam = 8T736HH745;
 						LastSwiftMigration = 0900;
 						ProvisioningStyle = Automatic;
 						TestTargetID = 297AE8331EC0D58A00B44A1F;
@@ -2885,6 +2888,7 @@
 				292FCB191EDFCC510026635E /* IssueTitleSectionController.swift in Sources */,
 				294563F01EE5036A00DBCD35 /* IssueType.swift in Sources */,
 				29136BDD200A6C40007317BE /* IssueTitleModel.swift in Sources */,
+				C0179F642145760F00E120E1 /* GitHawkRefreshControl.swift in Sources */,
 				2919294B1F3EAD890012067B /* IssueViewFilesCell.swift in Sources */,
 				291929491F3EAD2E0012067B /* IssueViewFilesSectionController.swift in Sources */,
 				292FCB101EDFCC510026635E /* IssueViewModels.swift in Sources */,
@@ -3167,11 +3171,11 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 523C4DWBTH;
+				DEVELOPMENT_TEAM = 8T736HH745;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				IBSC_MODULE = FreetimeWatch_Extension;
 				INFOPLIST_FILE = FreetimeWatch/Info.plist;
-				PRODUCT_BUNDLE_IDENTIFIER = com.whoisryannystrom.freetime.watchkitapp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ehudadler.freetime.watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
@@ -3194,11 +3198,11 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 523C4DWBTH;
+				DEVELOPMENT_TEAM = 8T736HH745;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				IBSC_MODULE = FreetimeWatch_Extension;
 				INFOPLIST_FILE = FreetimeWatch/Info.plist;
-				PRODUCT_BUNDLE_IDENTIFIER = com.whoisryannystrom.freetime.watchkitapp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ehudadler.freetime.watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
@@ -3221,11 +3225,11 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 523C4DWBTH;
+				DEVELOPMENT_TEAM = 8T736HH745;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				IBSC_MODULE = FreetimeWatch_Extension;
 				INFOPLIST_FILE = FreetimeWatch/Info.plist;
-				PRODUCT_BUNDLE_IDENTIFIER = com.whoisryannystrom.freetime.watchkitapp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ehudadler.freetime.watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
@@ -3245,11 +3249,11 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CODE_SIGN_ENTITLEMENTS = "FreetimeWatch Extension/FreetimeWatch Extension.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 523C4DWBTH;
+				DEVELOPMENT_TEAM = 8T736HH745;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = "FreetimeWatch Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.whoisryannystrom.freetime.watchkitapp.watchkitextension;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ehudadler.freetime.watchkitapp.watchkitextension;
 				PRODUCT_NAME = "${TARGET_NAME}";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
@@ -3269,11 +3273,11 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CODE_SIGN_ENTITLEMENTS = "FreetimeWatch Extension/FreetimeWatch Extension.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 523C4DWBTH;
+				DEVELOPMENT_TEAM = 8T736HH745;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = "FreetimeWatch Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.whoisryannystrom.freetime.watchkitapp.watchkitextension;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ehudadler.freetime.watchkitapp.watchkitextension;
 				PRODUCT_NAME = "${TARGET_NAME}";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
@@ -3293,11 +3297,11 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CODE_SIGN_ENTITLEMENTS = "FreetimeWatch Extension/FreetimeWatch Extension.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 523C4DWBTH;
+				DEVELOPMENT_TEAM = 8T736HH745;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = "FreetimeWatch Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.whoisryannystrom.freetime.watchkitapp.watchkitextension;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ehudadler.freetime.watchkitapp.watchkitextension;
 				PRODUCT_NAME = "${TARGET_NAME}";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
@@ -3433,7 +3437,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 523C4DWBTH;
+				DEVELOPMENT_TEAM = 8T736HH745;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -3456,7 +3460,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_SWIFT_FLAGS = "$(inherited) \"-D\" \"COCOAPODS\" -Xfrontend -debug-time-function-bodies -Onone -Xfrontend -warn-long-function-bodies=200 -Xfrontend -warn-long-expression-type-checking=200";
-				PRODUCT_BUNDLE_IDENTIFIER = com.whoisryannystrom.freetime;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ehudadler.freetime;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -3476,7 +3480,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 523C4DWBTH;
+				DEVELOPMENT_TEAM = 8T736HH745;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -3499,7 +3503,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_SWIFT_FLAGS = "$(inherited) \"-D\" \"COCOAPODS\" -Xfrontend -debug-time-function-bodies";
-				PRODUCT_BUNDLE_IDENTIFIER = com.whoisryannystrom.freetime;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ehudadler.freetime;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -3515,10 +3519,10 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				DEVELOPMENT_TEAM = 523C4DWBTH;
+				DEVELOPMENT_TEAM = 8T736HH745;
 				INFOPLIST_FILE = FreetimeTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.whoisryannystrom.FreetimeTests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ehudadler.FreetimeTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Freetime.app/Freetime";
@@ -3531,10 +3535,10 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				DEVELOPMENT_TEAM = 523C4DWBTH;
+				DEVELOPMENT_TEAM = 8T736HH745;
 				INFOPLIST_FILE = FreetimeTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.whoisryannystrom.FreetimeTests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ehudadler.FreetimeTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Freetime.app/Freetime";
@@ -3605,7 +3609,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 523C4DWBTH;
+				DEVELOPMENT_TEAM = 8T736HH745;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -3634,7 +3638,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_SWIFT_FLAGS = "$(inherited) \"-D\" \"COCOAPODS\" -Xfrontend -debug-time-function-bodies";
-				PRODUCT_BUNDLE_IDENTIFIER = com.whoisryannystrom.freetime;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ehudadler.freetime;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -3651,10 +3655,10 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				DEVELOPMENT_TEAM = 523C4DWBTH;
+				DEVELOPMENT_TEAM = 8T736HH745;
 				INFOPLIST_FILE = FreetimeTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.whoisryannystrom.FreetimeTests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ehudadler.FreetimeTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Freetime.app/Freetime";
