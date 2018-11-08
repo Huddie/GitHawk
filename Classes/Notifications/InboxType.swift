@@ -12,11 +12,19 @@ enum InboxType {
     case unread
     case repo(Repository)
     case all
+    case issueDashboard
 
     var showAll: Bool {
         switch self {
         case .all, .repo: return true
-        case .unread: return false
+        case .unread, .issueDashboard: return false
+        }
+    }
+
+    var isDashboard: Bool {
+        switch self {
+        case .issueDashboard: return true
+        case .all, .repo, .unread: return false
         }
     }
 }

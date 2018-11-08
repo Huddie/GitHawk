@@ -47,6 +47,7 @@ final class NotificationModelController {
     func fetchNotifications(
         repo: Repository? = nil,
         all: Bool = false,
+        isDashboard: Bool = false,
         page: Int = 1,
         width: CGFloat,
         completion: @escaping (Result<([NotificationViewModel], Int?)>) -> Void
@@ -61,6 +62,23 @@ final class NotificationModelController {
                     badge.updateLocalNotificationCache(notifications: response.data, showAlert: false)
 
                     CreateNotificationViewModels(
+                        width: width,
+                        contentSizeCategory: contentSizeCategory,
+                        v3notifications: response.data
+                    ) { [weak self] in
+                        self?.fetchStates(for: $0, page: response.next, completion: completion)
+                    }
+                case .failure(let error):
+                    completion(.error(error))
+                }
+            }
+        } else if isDashboard {
+            githubClient.client.send(V3IssueDashboardRequest(all: all, page: page)) { result in
+                print(result)
+                switch result {
+                case .success(let response):
+                    print(response)
+                    CreateDashboardNotificationViewModels(
                         width: width,
                         contentSizeCategory: contentSizeCategory,
                         v3notifications: response.data
@@ -92,6 +110,58 @@ final class NotificationModelController {
     }
 
     private func fetchStates(
+        for notifications: [NotificationViewModel],
+        page: Int?,
+        completion: @escaping (Result<([NotificationViewModel], Int?)>) -> Void
+        ) {
+        guard notifications.count > 0 else {
+            completion(.success((notifications, page)))
+            return
+        }
+        let content = "state comments{totalCount} viewerSubscription"
+        let notificationQueries: String = notifications.compactMap {
+            guard let alias = $0.stateAlias else { return nil }
+            return """
+            \(alias.key): repository(owner: "\($0.owner)", name: "\($0.repo)") { issueOrPullRequest(number: \(alias.number)) { ...on Issue {\(content)} ...on PullRequest {\(content)} } }
+            """
+            }.joined(separator: " ")
+        let query = "query{\(notificationQueries)}"
+
+        let cache = githubClient.cache
+
+        githubClient.client.send(ManualGraphQLRequest(query: query)) { result in
+            let processedNotifications: [NotificationViewModel]
+            switch result {
+            case .success(let json):
+                var updatedNotifications = [NotificationViewModel]()
+                for notification in notifications {
+                    if let alias = notification.stateAlias,
+                        let result = json.data[alias.key] as? [String: Any],
+                        let issueOrPullRequest = result["issueOrPullRequest"] as? [String: Any],
+                        let stateString = issueOrPullRequest["state"] as? String,
+                        let state = NotificationViewModel.State(rawValue: stateString),
+                        let commentsJSON = issueOrPullRequest["comments"] as? [String: Any],
+                        let commentCount = commentsJSON["totalCount"] as? Int,
+                        let subscription = issueOrPullRequest["viewerSubscription"] as? String {
+                        var newNotification = notification
+                        newNotification.state = state
+                        newNotification.comments = commentCount
+                        newNotification.watching = subscription != "IGNORED"
+                        updatedNotifications.append(newNotification)
+                    } else {
+                        updatedNotifications.append(notification)
+                    }
+                }
+                processedNotifications = updatedNotifications
+            case .failure:
+                processedNotifications = notifications
+            }
+            cache.set(values: processedNotifications)
+            completion(.success((processedNotifications, page)))
+        }
+    }
+
+    private func fetchIssueDashboard(
         for notifications: [NotificationViewModel],
         page: Int?,
         completion: @escaping (Result<([NotificationViewModel], Int?)>) -> Void

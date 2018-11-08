@@ -470,6 +470,8 @@
 		BDB6AA6A215FBC35009BB73C /* RepositoryBranchesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDB6AA63215FBC35009BB73C /* RepositoryBranchesCell.swift */; };
 		BDB6AA6B215FBC35009BB73C /* GitHubClient+RepositoryBranches.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDB6AA64215FBC35009BB73C /* GitHubClient+RepositoryBranches.swift */; };
 		BDB6AA762165B8EA009BB73C /* SwitchBranches.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDB6AA752165B8EA009BB73C /* SwitchBranches.swift */; };
+		C0BF304C2193A94E00A954D4 /* V3IssueDashboardRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0BF304B2193A94D00A954D4 /* V3IssueDashboardRequest.swift */; };
+		C0BF30502193B40400A954D4 /* V3IssueDashboardNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0BF304F2193B40400A954D4 /* V3IssueDashboardNotification.swift */; };
 		C0DEB1DD218E7BFB00B6FEFD /* IssueTemplates.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0DEB1DC218E7BFB00B6FEFD /* IssueTemplates.swift */; };
 		D8BAD0601FDA0A1A00C41071 /* LabelListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8BAD05F1FDA0A1A00C41071 /* LabelListCell.swift */; };
 		D8BAD0641FDF221900C41071 /* LabelListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8BAD0631FDF221900C41071 /* LabelListView.swift */; };
@@ -1034,6 +1036,8 @@
 		BDB6AA63215FBC35009BB73C /* RepositoryBranchesCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepositoryBranchesCell.swift; sourceTree = "<group>"; };
 		BDB6AA64215FBC35009BB73C /* GitHubClient+RepositoryBranches.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "GitHubClient+RepositoryBranches.swift"; sourceTree = "<group>"; };
 		BDB6AA752165B8EA009BB73C /* SwitchBranches.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchBranches.swift; sourceTree = "<group>"; };
+		C0BF304B2193A94D00A954D4 /* V3IssueDashboardRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = V3IssueDashboardRequest.swift; sourceTree = "<group>"; };
+		C0BF304F2193B40400A954D4 /* V3IssueDashboardNotification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = V3IssueDashboardNotification.swift; sourceTree = "<group>"; };
 		C0DEB1DC218E7BFB00B6FEFD /* IssueTemplates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IssueTemplates.swift; sourceTree = "<group>"; };
 		D396E0DA66FED629384A84BC /* Pods_FreetimeWatch.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FreetimeWatch.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8BAD05F1FDA0A1A00C41071 /* LabelListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelListCell.swift; sourceTree = "<group>"; };
@@ -2000,6 +2004,8 @@
 				29A1950B1EC7901400C3E289 /* NotificationType.swift */,
 				29A195091EC78B4800C3E289 /* NotificationType+Icon.swift */,
 				29BBD82820CAC7D5004D62FE /* NotificationViewModel.swift */,
+				C0BF304B2193A94D00A954D4 /* V3IssueDashboardRequest.swift */,
+				C0BF304F2193B40400A954D4 /* V3IssueDashboardNotification.swift */,
 			);
 			path = Notifications;
 			sourceTree = "<group>";
@@ -2975,6 +2981,7 @@
 				299F4A89204CEDDC004BA4F0 /* Client+AccessToken.swift in Sources */,
 				2931892F1F539C0E00EF0911 /* IssueMilestoneSectionController.swift in Sources */,
 				29BBD82920CAC7D5004D62FE /* NotificationViewModel.swift in Sources */,
+				C0BF304C2193A94E00A954D4 /* V3IssueDashboardRequest.swift in Sources */,
 				299F63E2205DE1470015D901 /* UIView+DateDetails.swift in Sources */,
 				9870B9031FC73EE70009719C /* Secrets.swift in Sources */,
 				29A5AF451F9298360065D529 /* GitHubClient+Repository.swift in Sources */,
@@ -3086,6 +3093,7 @@
 				29B94E671FCB2D4600715D7E /* CodeView.swift in Sources */,
 				29136BDB200A626D007317BE /* FixedRefreshControl.swift in Sources */,
 				2980033E1F51E93500BE90F4 /* RatingSectionController.swift in Sources */,
+				C0BF30502193B40400A954D4 /* V3IssueDashboardNotification.swift in Sources */,
 				29FF85A51EE1EA7A007B8762 /* ReactionContent+ReactionType.swift in Sources */,
 				296A4960210E7B9A00BBBF2B /* IssueDetailBadgeView.swift in Sources */,
 				292FCB1D1EDFCD3D0026635E /* ReactionViewModel.swift in Sources */,

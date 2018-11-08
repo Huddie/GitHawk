@@ -40,6 +40,7 @@ BaseListViewControllerEmptyDataSource {
         switch inboxType {
         case .all: title = NSLocalizedString("All", comment: "")
         case .unread: title = NSLocalizedString("Inbox", comment: "")
+        case .issueDashboard: title = NSLocalizedString("Issue Dashboard", comment: "")
         case .repo(let repo): title = repo.name
         }
     }
@@ -64,7 +65,7 @@ BaseListViewControllerEmptyDataSource {
             )
             item.accessibilityLabel = Constants.Strings.moreOptions
             navigationItem.leftBarButtonItem = item
-        case .repo, .all: break
+        case .repo, .all, .issueDashboard: break
         }
 
         navigationController?.tabBarItem.badgeColor = Styles.Colors.Red.medium.color
@@ -73,20 +74,31 @@ BaseListViewControllerEmptyDataSource {
     override func fetch(page: Int?) {
         let width = view.bounds.width
         let showAll = inboxType.showAll
+        let isDashboard = inboxType.isDashboard
 
         let repo: Repository?
         switch inboxType {
         case .repo(let r): repo = r
-        case .all, .unread: repo = nil
+        case .all, .unread, .issueDashboard: repo = nil
         }
 
         if let page = page {
-            modelController.fetchNotifications(repo: repo, all: showAll, page: page, width: width) { [weak self] result in
+            modelController.fetchNotifications(
+            repo: repo,
+            all: showAll,
+            isDashboard: isDashboard,
+            page: page,
+            width: width) { [weak self] result in
                 self?.handle(result: result, append: true, animated: false, page: page)
             }
         } else {
             let first = 1
-            modelController.fetchNotifications(repo: repo, all: showAll, page: first, width: width) { [weak self] result in
+            modelController.fetchNotifications(
+            repo: repo,
+            all: showAll,
+            isDashboard: isDashboard,
+            page: first,
+            width: width) { [weak self] result in
                 self?.handle(result: result, append: false, animated: trueUnlessReduceMotionEnabled, page: first)
             }
         }
@@ -115,7 +127,7 @@ BaseListViewControllerEmptyDataSource {
         // prevents archives updating badge and tab #s
         switch inboxType {
         case .repo: return
-        case .all, .unread: break
+        case .all, .unread, .issueDashboard: break
         }
 
         var unread = 0
@@ -134,12 +146,19 @@ BaseListViewControllerEmptyDataSource {
 
     @objc func onMore(sender: UIBarButtonItem) {
         let alert = UIAlertController.configured(preferredStyle: .actionSheet)
-
+        
         alert.add(action: UIAlertAction(
             title: NSLocalizedString("View All", comment: ""),
             style: .default,
             handler: { [weak self] _ in
                 self?.onViewAll()
+        }))
+
+        alert.add(action: UIAlertAction(
+            title: NSLocalizedString("Issue Dashboard", comment: ""),
+            style: .default,
+            handler: { [weak self] _ in
+                self?.onViewIssueDashboard()
         }))
 
         let cache = modelController.githubClient.cache
@@ -175,6 +194,14 @@ BaseListViewControllerEmptyDataSource {
         navigationController?.pushViewController(controller, animated: trueUnlessReduceMotionEnabled)
     }
 
+    func onViewIssueDashboard() {
+        let controller = NotificationsViewController(
+            modelController: modelController,
+            inboxType: .issueDashboard
+        )
+        navigationController?.pushViewController(controller, animated: trueUnlessReduceMotionEnabled)
+    }
+
     func resetRightBarItem(updatingState updateState: Bool = true) {
         let item = UIBarButtonItem(
             image: UIImage(named: "check"),
@@ -192,7 +219,7 @@ BaseListViewControllerEmptyDataSource {
     @objc private func onMarkAll() {
         let message: String
         switch inboxType {
-        case .all, .unread:
+        case .all, .unread, .issueDashboard:
             message = NSLocalizedString("Mark all notifications as read?", comment: "")
         case .repo(let repo):
             let messageFormat = NSLocalizedString("Mark %@ notifications as read?", comment: "")
@@ -242,7 +269,7 @@ BaseListViewControllerEmptyDataSource {
         }
 
         switch inboxType {
-        case .all, .unread: modelController.markAllNotifications(completion: block)
+        case .all, .unread, .issueDashboard: modelController.markAllNotifications(completion: block)
         case .repo(let repo): modelController.markRepoNotifications(repo: repo, completion: block)
         }
     }

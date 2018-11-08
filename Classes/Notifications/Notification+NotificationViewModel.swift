@@ -54,3 +54,46 @@ func CreateNotificationViewModels(
         }
     }
 }
+
+func CreateDashboardNotificationViewModels(
+    width: CGFloat,
+    contentSizeCategory: UIContentSizeCategory,
+    v3notifications: [V3IssueDashboardNotification],
+    completion: @escaping ([NotificationViewModel]) -> Void
+    ) {
+    DispatchQueue.global().async {
+        var models = [NotificationViewModel]()
+
+        for notification in v3notifications {
+            guard let type = NotificationType(rawValue: "Issue")
+            //, let identifier = notification.subject.identifier
+                else { continue }
+
+            let number: NotificationViewModel.Number
+
+            number = .number(notification.number)
+
+            models.append(NotificationViewModel(
+                v3id: "\(notification.id)",
+                repo: notification.repository.name,
+                owner: notification.repository.owner.login,
+                title: CreateNotification(title: notification.title, width: width, contentSizeCategory: contentSizeCategory),
+                number: number,
+                state: .pending, // fetched later
+                date: notification.updatedAt,
+                ago: notification.updatedAt.agoString(.short),
+                read: false,
+                comments: 0, // fetched later
+                watching: true, // assumed based on receiving
+                type: type,
+                // TODO get from GQL notification request
+                branch: "master",
+                issuesEnabled: true
+            ))
+        }
+
+        DispatchQueue.main.async {
+            completion(models)
+        }
+    }
+}
