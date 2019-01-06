@@ -99,7 +99,7 @@ final class NotificationCell: SelectableCell, CAAnimationDelegate {
         commentButton.setTitleColor(grey, for: .normal)
         commentButton.contentEdgeInsets = UIEdgeInsets(top: 0, left: 0, bottom: -2, right: 0)
         commentButton.titleEdgeInsets = UIEdgeInsets(top: -4, left: 2, bottom: 0, right: 0)
-        commentButton.setImage(UIImage(named: "comment-small")?.withRenderingMode(.alwaysTemplate), for: .normal)
+        commentButton.setImage(UIImage(named: "comment-small").withRenderingMode(.alwaysTemplate), for: .normal)
         commentButton.contentHorizontalAlignment = .left
         commentButton.snp.makeConstraints { make in
             make.width.equalTo(actionsHeight)
@@ -113,7 +113,7 @@ final class NotificationCell: SelectableCell, CAAnimationDelegate {
         }
 
         readButton.tintColor = grey
-        readButton.setImage(UIImage(named: "check-small")?.withRenderingMode(.alwaysTemplate), for: .normal)
+        readButton.setImage(UIImage(named: "check-small").withRenderingMode(.alwaysTemplate), for: .normal)
         readButton.addTarget(self, action: #selector(onRead(sender:)), for: .touchUpInside)
         readButton.contentHorizontalAlignment = .center
         readButton.snp.makeConstraints { make in
@@ -121,7 +121,7 @@ final class NotificationCell: SelectableCell, CAAnimationDelegate {
         }
 
         moreButton.tintColor = grey
-        moreButton.setImage(UIImage(named: "bullets-small")?.withRenderingMode(.alwaysTemplate), for: .normal)
+        moreButton.setImage(UIImage(named: "bullets-small").withRenderingMode(.alwaysTemplate), for: .normal)
         moreButton.addTarget(self, action: #selector(onMore(sender:)), for: .touchUpInside)
         moreButton.contentHorizontalAlignment = .right
         moreButton.snp.makeConstraints { make in
@@ -143,15 +143,6 @@ final class NotificationCell: SelectableCell, CAAnimationDelegate {
         super.layoutSubviews()
         textView.reposition(for: contentView.bounds.width)
         readOverlayView.frame = bounds
-//        CATransaction.begin()
-//        CATransaction.setValue(kCFBooleanTrue, forKey: kCATransactionDisableActions)
-//        readLayer.path = UIBezierPath(ovalIn: readButton.bounds).cgPath
-//        readLayer.bounds = readButton.bounds
-//        readLayer.position = convert(readButton.center, from: readButton.superview)
-//        readLayer.transform = CATransform3DMakeScale(30, 30, 30)
-//        // keep the read layer in front
-//        readLayer.superlayer?.addSublayer(readLayer)
-//        CATransaction.commit()
     }
 
     override var accessibilityLabel: String? {

@@ -47,6 +47,7 @@ enum Styles {
         static let cardCornerRadius: CGFloat = 6
         static let maxImageHeight: CGFloat = 300
         static let contextMenuSize: CGSize = CGSize(width: 280, height: 240)
+        static let contextMenuSmallSize: CGSize = CGSize(width: 180, height: 240)
 
         enum HTML {
             static let boldWeight = 600
@@ -83,7 +84,7 @@ enum Styles {
 
     enum Colors {
 
-        static let background = Styles.Colors.Gray.lighter.color
+        static let background = UIColor.white
         static let purple = "6f42c1"
         static let blueGray = "8697af"
         static let menuBackgroundColor = "292D35"
@@ -102,6 +103,7 @@ enum Styles {
         enum Blue {
             static let medium = "0366d6"
             static let light = "f1f8ff"
+            static let menu = "5d9cf4"
         }
 
         enum Gray {
@@ -125,7 +127,7 @@ enum Styles {
         UINavigationBar.appearance().tintColor =  Styles.Colors.Blue.medium.color
         UINavigationBar.appearance().titleTextAttributes =
             [NSAttributedStringKey.foregroundColor: Styles.Colors.Gray.dark.color]
-        UISwitch.appearance().onTintColor = Styles.Colors.Green.medium.color
+        UISwitch.appearance().onTintColor = Styles.Colors.Blue.medium.color
         UISearchBar.appearance().tintColor = Styles.Colors.Blue.medium.color
         DropdownTitleView.appearance().chevronTintColor = Styles.Colors.Gray.medium.color
         DropdownTitleView.appearance().titleColor = Styles.Colors.Gray.dark.color
