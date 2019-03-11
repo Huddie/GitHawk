@@ -520,6 +520,8 @@
 		BDB6AA762165B8EA009BB73C /* SwitchBranches.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDB6AA752165B8EA009BB73C /* SwitchBranches.swift */; };
 		C0E3CD4B21BAE49B00185B57 /* NSRegularExpression+StaticString.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0E3CD4A21BAE49B00185B57 /* NSRegularExpression+StaticString.swift */; };
 		C0E3CD4D21BAE65000185B57 /* UIImage+StaticString.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0E3CD4C21BAE65000185B57 /* UIImage+StaticString.swift */; };
+		C0F0706A2236C32100C90A31 /* Regex+Groups.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F070692236C32100C90A31 /* Regex+Groups.swift */; };
+		C0F0706C2236C95600C90A31 /* String+GithubEmoji.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F0706B2236C95600C90A31 /* String+GithubEmoji.swift */; };
 		D8BAD0601FDA0A1A00C41071 /* LabelListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8BAD05F1FDA0A1A00C41071 /* LabelListCell.swift */; };
 		D8BAD0641FDF221900C41071 /* LabelListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8BAD0631FDF221900C41071 /* LabelListView.swift */; };
 		D8BAD0661FDF224600C41071 /* WrappingStaticSpacingFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8BAD0651FDF224600C41071 /* WrappingStaticSpacingFlowLayout.swift */; };
@@ -1129,6 +1131,8 @@
 		BDB6AA752165B8EA009BB73C /* SwitchBranches.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchBranches.swift; sourceTree = "<group>"; };
 		C0E3CD4A21BAE49B00185B57 /* NSRegularExpression+StaticString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSRegularExpression+StaticString.swift"; sourceTree = "<group>"; };
 		C0E3CD4C21BAE65000185B57 /* UIImage+StaticString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+StaticString.swift"; sourceTree = "<group>"; };
+		C0F070692236C32100C90A31 /* Regex+Groups.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Regex+Groups.swift"; sourceTree = "<group>"; };
+		C0F0706B2236C95600C90A31 /* String+GithubEmoji.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+GithubEmoji.swift"; sourceTree = "<group>"; };
 		D396E0DA66FED629384A84BC /* Pods_FreetimeWatch.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FreetimeWatch.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8BAD05F1FDA0A1A00C41071 /* LabelListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelListCell.swift; sourceTree = "<group>"; };
 		D8BAD0631FDF221900C41071 /* LabelListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LabelListView.swift; sourceTree = "<group>"; };
@@ -2303,6 +2307,8 @@
 				298C7E2721D80BAF00DD2A60 /* Error+GraphQLForbidden.swift */,
 				031E0240220B433C00A329F1 /* UIImage+Color.swift */,
 				03E8D823221D339200EB792A /* GithubURL.swift */,
+				C0F070692236C32100C90A31 /* Regex+Groups.swift */,
+				C0F0706B2236C95600C90A31 /* String+GithubEmoji.swift */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -3210,6 +3216,7 @@
 				7B4B31A61F92257400480CE9 /* SearchQueryTokenizer.swift in Sources */,
 				2986B3581FD30EC400E3CFC6 /* IssueManagingExpansionModel.swift in Sources */,
 				2999972C20311DD700995FFD /* IssueMergeSummaryCell.swift in Sources */,
+				C0F0706A2236C32100C90A31 /* Regex+Groups.swift in Sources */,
 				290EF5791F06BAF4006A2160 /* NoNewNotificationsSectionController.swift in Sources */,
 				290EF56A1F06A821006A2160 /* Notification+NotificationViewModel.swift in Sources */,
 				BDB6AA6A215FBC35009BB73C /* RepositoryBranchesCell.swift in Sources */,
@@ -3332,6 +3339,7 @@
 				29CCB28B1FDDFFA200E23FA0 /* String+GithubDate.swift in Sources */,
 				29BBD82B20CACB2F004D62FE /* NotificationCell.swift in Sources */,
 				29C295111EC7B83200D46CD2 /* ShowMoreDetailsLabel.swift in Sources */,
+				C0F0706C2236C95600C90A31 /* String+GithubEmoji.swift in Sources */,
 				292D2F1720FA5CAD00099342 /* Squawk+GitHawk.swift in Sources */,
 				DC6339371F9F567000402A8D /* DeleteSwipeAction.swift in Sources */,
 				29BCA7FF212137E100753A3C /* IssueBranchesSectionController.swift in Sources */,
